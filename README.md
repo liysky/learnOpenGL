@@ -1,6 +1,6 @@
 ### Learn OpenGL
 
-**Learn from **
+**Learn from**
 
 * from https://learnopengl.com/Getting-started/Hello-Triangle
 

@@ -58,7 +58,7 @@ int main() {
 	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 
-	//OPen GLFW Window
+	//open GLFW Window
 	//create a window object, which will required by most of other functions of GLFW.
 	GLFWwindow* window = glfwCreateWindow(800, 600, "Mywindow", NULL, NULL);
 	if (window == NULL)
@@ -91,10 +91,19 @@ int main() {
 	//while the third and fourth set the width and height of the rendering window in pixels. 	
 	glViewport(0, 0, 800, 600);
 	
+	//glfwWindowsShouldClose function checks if GLFW is asked to be closed or not?
+	//if true: close the loop blender
 	while (!glfwWindowShouldClose(window))
 	{
+
+
+		glClearColor(0.0f, 0.5f, 0.0f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		//swap the buffer with screen
 		glfwSwapBuffers(window);
-		glfwPollEvents();		//checks if any events are triggered (keyboard input or mouse) and call corresponding function.
+		//checks if any events are triggered (keyboard input or mouse) and call corresponding function.
+		glfwPollEvents();		
 	}
 
 	glfwTerminate();

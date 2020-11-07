@@ -2,7 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#define GLEW_STATIC
+#include <GL/glew.h>			 
+#include <GLFW/glfw3.h>		
 
 /*
 * Read File Stream:
@@ -48,9 +50,27 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 		// stringBuffer to string
 		vertexSource = vertexString.c_str();
 		fragmentSource = fragmentString.c_str();
+		
+		// shader ID, unsigned int vertex, fragment
+		unsigned int vertex, fragment;
+		vertex = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vertex, 1, &vertexSource, NULL);
+		// compile shader into bin
+		glCompileShader(vertex);
+		
+		fragment = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fragment, 1, &fragmentSource, NULL);
+		glCompileShader(fragment);
 
-		printf(vertexSource);
-		printf(fragmentSource);
+		//shaderProgram is a multishader linked and compiled and returned 
+		ID = glCreateProgram();
+		//attach vertex and fragment into ID to link
+		glAttachShader(ID, vertex);
+		glAttachShader(ID, fragment);
+		glLinkProgram(ID);
+		glDeleteShader(vertex);
+		glDeleteShader(fragment);
+
 	}
 	catch (const std::exception& ex)
 	{
@@ -58,4 +78,8 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	}
 
 	
+}
+
+void Shader::use() {
+	glUseProgram(ID);
 }

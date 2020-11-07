@@ -74,27 +74,7 @@ unsigned int indices[] = { // 注意索引从0开始!
 	2, 1, 3  // 第二个三角形
 };
 
-const char* vertexShaderSource =
-"#version 330 core											   \n "
-"layout(location = 0) in vec3 aPos;							   \n "
-"layout(location = 1) in vec3 aColor;							   \n "
-"out vec3 vertexColor;										   \n "
-"void main(){										           \n "
-"	gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);		   \n "
-"   vertexColor = aColor;		}				   \n ";
-
-
-const char* fragmentShaderSource =
-"#version 330 core										\n "
-"in vec3 vertexColor;									\n"
-//"uniform vec4 ourColor;									\n"					
-"out vec4 FragColor;									\n "
-"void main()											\n "
-"{	FragColor = vec4(vertexColor, 1.0);}			\n ";
-
-
 int main() {
-	Shader* testShader = new Shader("vertexSource.txt", "fragmentSource.txt");
 
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);	//configure big version and minor version.
@@ -114,15 +94,6 @@ int main() {
 	// tell GLFW to make the context of our window now created as main context on the currrent thread.
 	glfwMakeContextCurrent(window);
 
-	/*
-	//Init GLAD
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-	std::cout << "Failed to initialize GLAD" << std::endl;
-	return -1;
-	}
-	*/
-	//Init GLEW
 
 	glewExperimental = true;
 	if (glewInit() != GLEW_OK)
@@ -139,6 +110,9 @@ int main() {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);		// draw fill
 	//glCullFace(GL_BACK);
 	//glCullFace(GL_FRONT);
+
+	// shader create after glew init
+	Shader* myShader = new Shader("vertexSource.txt", "fragmentSource.txt");
 
 	// vertex array object
 	unsigned int VAO;
@@ -161,7 +135,7 @@ int main() {
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
-
+/*
 	unsigned int vertexShader;
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -178,6 +152,7 @@ int main() {
 	glAttachShader(shaderProgram, vertexShader);
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
+*/
 
 	// tell OpenGL how it should interpret the vertex data
 	// 0: start location, which we specified the location of the position vertex attribute in vertex shader
@@ -201,12 +176,16 @@ int main() {
 
 		glBindVertexArray(VAO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-
+		/*
 		float timeValue = glfwGetTime();
 		float greenValue = sin(timeValue) / 2.0f + 0.5f;
 		int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
 		glUseProgram(shaderProgram);
 		glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+		*/
+
+		myShader->use();
+
 
 
 		//glDrawArrays(GL_TRIANGLES, 0, 3);

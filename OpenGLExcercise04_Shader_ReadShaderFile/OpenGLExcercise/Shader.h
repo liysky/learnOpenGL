@@ -11,6 +11,7 @@ public:
 	// const: write once
 	const char* vertexSource;
 	const char* fragmentSource;
-
+	unsigned int ID;	//Shader program ID
+	void use();			//use the shader to call CPU input shader into program
 
 };

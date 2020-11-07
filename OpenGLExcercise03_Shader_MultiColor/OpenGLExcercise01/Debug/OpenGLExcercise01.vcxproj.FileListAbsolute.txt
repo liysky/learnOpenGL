@@ -1,0 +1,2 @@
+D:\Code\OpenGL_CPP\OpenGLExcercise03_Shader_MultiColor\OpenGLExcercise01\Debug\OpenGLExcercise02_Triangle.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise03_Shader_MultiColor\OpenGLExcercise01\Debug\OpenGLExcercise02_Triangle.pdb

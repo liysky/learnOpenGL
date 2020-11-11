@@ -13,5 +13,8 @@ public:
 	const char* fragmentSource;
 	unsigned int ID;	//Shader program ID
 	void use();			//use the shader to call CPU input shader into program
+	
+private:
+	void checkCompileErrors(unsigned int ID, std::string type);
 
 };

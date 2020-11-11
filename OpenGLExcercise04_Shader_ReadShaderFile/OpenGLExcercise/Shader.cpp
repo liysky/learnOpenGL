@@ -57,10 +57,12 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 		glShaderSource(vertex, 1, &vertexSource, NULL);
 		// compile shader into bin
 		glCompileShader(vertex);
+		checkCompileErrors(vertex, "VERTEX");
 		
 		fragment = glCreateShader(GL_FRAGMENT_SHADER);
 		glShaderSource(fragment, 1, &fragmentSource, NULL);
 		glCompileShader(fragment);
+		checkCompileErrors(fragment, "FRAGMENT");
 
 		//shaderProgram is a multishader linked and compiled and returned 
 		ID = glCreateProgram();
@@ -68,6 +70,9 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 		glAttachShader(ID, vertex);
 		glAttachShader(ID, fragment);
 		glLinkProgram(ID);
+		checkCompileErrors(ID, "PROGRAM");
+
+		// when linked shader into program, delete it  
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
 
@@ -80,6 +85,39 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	
 }
 
+// --- use shader program ID
 void Shader::use() {
 	glUseProgram(ID);
+}
+
+// ---check compile errors
+void Shader::checkCompileErrors(unsigned int ID, std::string type)
+{
+	int success;
+	char infolog[512];
+
+	/*
+	*  type != program, then check shader
+	*  ID, 
+	*  check glcompilestatus
+	*  return status info to success
+	*/
+	if (type != "PROGEAM")
+	{
+		glGetShaderiv(ID, GL_COMPILE_STATUS, &success);
+		if (!success)
+		{
+			glGetShaderInfoLog(ID, 512, NULL, infolog);
+			std::cout << "shader compile error: " << infolog << std::endl;
+		}
+	}
+	else
+	{
+		glGetProgramiv(ID, GL_LINK_STATUS, &success);
+		if (!success)
+		{
+			glGetProgramInfoLog(ID, 512, NULL, infolog);
+			std::cout << "program linking error: " << infolog << std::endl;
+		}
+	}
 }

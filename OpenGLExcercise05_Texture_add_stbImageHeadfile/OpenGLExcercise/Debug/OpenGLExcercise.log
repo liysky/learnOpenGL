@@ -1,0 +1,8 @@
+﻿d:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: 中间目录(Debug\)包含从另一个项目(OpenGLExcercise01.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  main.cpp
+  stbTest.cpp
+  正在生成代码...
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“glew32s.lib(glew.obj)”或在“D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture01\OpenGLExcercise\Debug\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  OpenGLExcercise.vcxproj -> D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture01\OpenGLExcercise\Debug\OpenGLExcercise.exe

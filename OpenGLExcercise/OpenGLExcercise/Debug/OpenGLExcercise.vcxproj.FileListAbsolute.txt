@@ -1,2 +1,0 @@
-D:\Code\OpenGL_CPP\OpenGLExcercise\OpenGLExcercise\Debug\OpenGLExcercise.exe
-D:\Code\OpenGL_CPP\OpenGLExcercise\OpenGLExcercise\Debug\OpenGLExcercise.pdb

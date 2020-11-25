@@ -1,0 +1,12 @@
+D:\Code\OpenGL_CPP\OpenGLExcercise\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise\OpenGLExcercise\Debug\OpenGLExcercise.pdb
+D:\Code\OpenGL_CPP\OpenGLExcercise04_Shader_ReadShaderFile\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise04_Shader_ReadShaderFile\OpenGLExcercise\Debug\OpenGLExcercise.pdb
+D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture01\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture01\OpenGLExcercise\Debug\OpenGLExcercise.pdb
+D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture02_add_brick\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise05_Texture02_add_brick\OpenGLExcercise\Debug\OpenGLExcercise.pdb
+D:\Code\OpenGL_CPP\OpenGLExcercise06_Transformations\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise06_Transformations\OpenGLExcercise\Debug\OpenGLExcercise.pdb
+D:\Code\OpenGL_CPP\OpenGLExcercise07_Coordinate_System_01\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise07_Coordinate_System_01\OpenGLExcercise\Debug\OpenGLExcercise.pdb

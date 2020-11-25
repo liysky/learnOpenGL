@@ -224,7 +224,8 @@ int main() {
 	{
 		glm::mat4 trans;
 		trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
-		trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		trans = glm::rotate(trans,55.0f, glm::vec3(1.0f, 0.0f, 0.0f));
+		//trans = glm::rotate(trans,(float)glfwGetTime(), glm::vec3(1.0f, 0.0f, 0.0f));
 		std::cout<<	((float)glfwGetTime())<<std::endl;
 		// scale translate 
 		//trans = glm::scale(trans, glm::vec3(2.0f, 2.0f, 2.0f));																		

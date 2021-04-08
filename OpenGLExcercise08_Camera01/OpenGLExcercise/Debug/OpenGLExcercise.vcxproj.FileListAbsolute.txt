@@ -1,0 +1,2 @@
+D:\Code\OpenGL_CPP\OpenGLExcercise08_Camera01\OpenGLExcercise\Debug\OpenGLExcercise.exe
+D:\Code\OpenGL_CPP\OpenGLExcercise08_Camera01\OpenGLExcercise\Debug\OpenGLExcercise.pdb
